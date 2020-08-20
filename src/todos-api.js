@@ -2,9 +2,31 @@ import request from 'superagent';
 
 const URL = process.env.REACT_APP_API_URL || 'https://nameless-harbor-83220.herokuapp.com';
 
+export function signUp(userData) {
+    try {
+        return request.post(`${URL}/auth/signup`, userData);
+    } catch(e) {
+        return { error: e.message }
+    }
+}
+
+
+export function signIn(userData) {
+    try {
+        return request.post(`${URL}/auth/signin`, userData);
+    } catch(e) {
+        return { error: e.message }
+    }
+}
+
+
 export function fetchTodos() {
+    const token = localStorage.getItem('token');
+
     try{
-        return request.get(`${URL}/todos`);
+        return request
+            .get(`${URL}/api/todos`)
+            .set('Authorization', token);
     } catch(e) {
         return { error: e.message }
     }
@@ -12,22 +34,33 @@ export function fetchTodos() {
 
 
 export function fetchTodo(id) {
-    return request.get(`${URL}/todos/${id}`);
+    const token = localStorage.getItem('token');
+
+    return request.get(`${URL}/api/todos/${id}`)
+        .set('Authorization', token);
 }
 
 
 export function deleteTodo(id) {
-    return request.delete(`${URL}/todos/${id}`);
+    const token = localStorage.getItem('token');
+
+    return request.delete(`${URL}/api/todos/${id}`)
+        .set('Authorization', token);
 }
 
 
 export function updateTodo(id, updatedTodo) {
-    console.log(id, 'wazzzzzupppppppppp');
-    return request.put(`${URL}/todos/${id}`, updatedTodo);
+    const token = localStorage.getItem('token');
+    
+    return request.put(`${URL}/api/todos/${id}`, updatedTodo)
+        .set('Authorization', token);
 }
 
 
 export function createTodo(todoData) {
-    return request.post(`${URL}/todos`, todoData)
+    const token = localStorage.getItem('token');
+
+    return request.post(`${URL}/api/todos`, todoData)
+        .set('Authorization', token);
 }
 
