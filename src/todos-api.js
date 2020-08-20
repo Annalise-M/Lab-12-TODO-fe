@@ -2,6 +2,8 @@ import request from 'superagent';
 
 const URL = process.env.REACT_APP_API_URL || 'https://nameless-harbor-83220.herokuapp.com';
 
+// const token = localStorage.getItem('TOKEN');
+
 export function signUp(userData) {
     try {
         return request.post(`${URL}/auth/signup`, userData);

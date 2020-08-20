@@ -38,6 +38,50 @@ body {
   cursor: url('https://bricampgomez.com/assets/img/batboy-50.png') 25 25,auto;
 }
 
+
+/* NAVBAR DESIGN */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.navbar > div {
+  padding: 0 30px;
+  font-size: 20px;
+}
+
+.navbar .menu {
+  margin-right: auto;
+}
+
+.navbar .Lang {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* SOCIAL MEDIA */
+.media ul {
+  position: absolute;
+  bottom: 250px;
+  left: -140px;
+  transform: rotate(-90deg);
+}
+
+.media ul li {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 0 30px;
+}
+
+
+/* loading feature when hovering over submit buttons */
+.wait {cursor: wait;}
+
 /* email input boxes design */
 input[type=text] {
   width: 130px;
@@ -46,8 +90,8 @@ input[type=text] {
   border-radius: 4px;
   font-size: 16px;
   background-color: #3CBC8D;
-  /* background-image: url('https://img.icons8.com/pastel-glyph/64/000000/search--v6.png'); */
-  background-position: 10px 10px; 
+  background-image: url('https://img.icons8.com/nolan/30/email.png');
+  background-position: 6px 6px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
   transition: width 0.4s ease-in-out;
@@ -66,7 +110,7 @@ input[type=password] {
   border-radius: 4px;
   font-size: 16px;
   background-color: #3CBC8D;
-  /* background-image: url('<img src="https://img.icons8.com/ios-glyphs/30/000000/private-lock.png"/>'); */
+  background-image: url('https://img.icons8.com/ios-glyphs/24/000000/private-lock.png');
   background-position: 10px 10px; 
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
@@ -77,4 +121,5 @@ input[type=password]:focus {
   width: 100%;
 }
 
-/* <img src="https://img.icons8.com/pastel-glyph/64/000000/search--v2.png"/> */
+
+

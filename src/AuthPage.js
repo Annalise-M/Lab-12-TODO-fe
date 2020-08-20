@@ -48,36 +48,61 @@ export default class AuthPage extends Component {
     render() {
         return (
             <div>
+                <div className="wrapper">
+
+                    {/* !-- NAVBAR -- */}
+                    <nav className="navbar">
+                        <div className="menu">
+                            <ion-icon name="ios-menu">menu</ion-icon>
+                        </div>
+                        <div className="lang">eng</div>
+                        <div className="search">
+                            <ion-icon name="ios-search"></ion-icon>
+                        </div>
+                    </nav>
+
+                    <div className="media">
+                        <ul>
+                            <li>facebook</li>
+                            <li>instagram</li>
+                            <li>twitter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* SignUp form with user email and pw inputs & submit button */}
                 <form onSubmit={this.handleSignUp}>
-                    <p>
-                    Sign up:
-                    </p>
+                    <p>Sign up:</p>
                     <label>
                         Email
                             <input type="text" onChange={e => this.setState({ signUpEmail: e.target.value })} value={this.state.signUpEmail}/>
                     </label>
-                    <p></p>
+                        <p></p>
                     <label>
                         Password
                             <input type="password" onChange={e => this.setState({ signUpPassword: e.target.value })} value={this.state.signUpPassword}/>
                     </label>
-                        <button>Submit</button>
+                    <break />
+                        <p class="wait">
+                            <button>Submit</button>
+                        </p>
                     </form>
-                {/*  */}
-                <form onSubmit={this.handleSignUp}>
-                    <p>
-                        Sign in:
-                    </p>
-                    <label>
-                        Email
-                            <input type="text" onChange={e => this.setState({ signInEmail: e.target.value })} value={this.state.signInEmail}/>
-                    </label>
-                    <p></p>
-                    <label>
-                        Password
-                            <input type="password" onChange={e => this.setState({ signInPassword: e.target.value })} value={this.state.signInPassword}/>
-                    </label>
-                        <button onClick="">Submit</button>
+                {/* SignIn form with user email and pw inputs & submit button */}
+                    <form onSubmit={this.handleSignUp}>
+                        <p>Sign in:</p>
+                        <label>
+                            Email
+                                <input type="text" onChange={e => this.setState({ signInEmail: e.target.value })} value={this.state.signInEmail}/>
+                        </label>
+                            <p></p>
+                        <label>
+                            Password
+                                <input type="password" onChange={e => this.setState({ signInPassword: e.target.value })} value={this.state.signInPassword}/>
+                        </label>
+                        <break />
+                        <p class="wait">
+                            <button onClick="">Submit</button>
+                        </p>
                     </form>
             </div>
     )}

@@ -66,7 +66,7 @@ export default class App extends Component {
                     <Route
                       path="/login"
                       exact
-                      render={(routerProps) => <AuthPage token={this.state.token} {...routerProps} />}
+                      render={(routerProps) => <AuthPage handleToken={this.handleToken} token={this.state.token} {...routerProps} />}
                     />
                   </Switch>
                 </div>
