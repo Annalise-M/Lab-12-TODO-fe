@@ -49,7 +49,11 @@ export default class AuthPage extends Component {
         return (
             <div>
                 <div className="wrapper">
-
+                {/* <!-- OVERLAY ========================= --> */}
+                    <div className="overlay first"></div>
+                    <div className="overlay second"></div>
+                    <div className="overlay third"></div>
+                    
                     {/* !-- NAVBAR -- */}
                     <nav className="navbar">
                         <div className="menu">
@@ -61,14 +65,26 @@ export default class AuthPage extends Component {
                         </div>
                     </nav>
 
+                    {/* work on transforming NAVBAR into SIDEBAR */}
                     <div className="media">
                         <ul>
-                            <li>facebook</li>
-                            <li>instagram</li>
-                            <li>twitter</li>
+                            {/* twitter => my lists => ListPage */}
+                            <li>sign up</li>
+                            {/* instagram = sign in */}
+                            <li>sign in</li>
+                            {/* facebook => sign up */}
+                            <li>my lists</li>
                         </ul>
                     </div>
+
+                    <div className="welcome">
+                        {/* <img> ---- IMAGE placement here ---- </img> */}
+                        <p>Welcome</p>
+                    </div>
+
+                    
                 </div>
+                
 
                 {/* SignUp form with user email and pw inputs & submit button */}
                 <form onSubmit={this.handleSignUp}>
@@ -87,6 +103,7 @@ export default class AuthPage extends Component {
                             <button>Submit</button>
                         </p>
                     </form>
+                    
                 {/* SignIn form with user email and pw inputs & submit button */}
                     <form onSubmit={this.handleSignUp}>
                         <p>Sign in:</p>
