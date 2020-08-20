@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { signUp, signIn} from './todos-api.js';
+import { 
+    signUp, 
+    signIn,
+    // fetchTodos,
+    // makeTodo,
+    // deleteTodo,
+    // updateTodo,
+} from './todos-api.js';
 
 
 export default class AuthPage extends Component {
@@ -11,34 +18,55 @@ export default class AuthPage extends Component {
         signUpPassword: ''
     }
 
+    // componentDidMount = async () => {
+    //     if(!this.props.checkState()){
+    //         this.props.history.push('/auth')
+    //     } else {
+    //     this.setState({ isLoading: true })
+    //     const data = await fetchTodos();
+        
+    //     this.setState({ todos: data.body })
+    //     console.log(data.body, 'My List of TO DOSSSS');
 
+    //     this.setState({ isLoading: false })
+    //     }
+    // }
+
+    
     handleSignUp = async (e) => {
         e.preventDefault();
-
+        
         const user = await signUp({
             email: this.state.signUpEmail,
             password: this.state.signUpPassword
         });
-
+        
         this.props.handleToken(user.body.token);
         this.props.history.push('/');
     }
-
-
+    
+    
     handleSignIn = async (e) => {
         e.preventDefault();
-
+        
         const user = await signIn({
             email: this.state.signInEmail,
             password: this.state.signInPassword
         });
-
-        console.log(user.body, 'userrrrrrrrrrrrrrrrrrrrrrrrrrboddddyyyyyyyyyyyyyyyyyy');
-
+        
+        // console.log(user.body, 'userrrrrrrrrrrrrrrrrrrrrrrrrrboddddyyyyyyyyyyyyyyyyyy');
+        
         this.props.handleToken(user.body.token);
         this.props.history.push('/');
     }
+    
+    // handleNewTodoSubmit = async (e) => {
+    //     e.preventDefault();
 
+    //     try{
+    //         await makeTodo({ todo: this.state.newTodo})
+    //     }
+    // }
 
     componentDidCatch(err, errInfo) {
         console.log('errrrrrrrrrrrrrrrrrrrrr', err, errInfo);
@@ -50,9 +78,9 @@ export default class AuthPage extends Component {
             <div>
                 <div className="wrapper">
                 {/* <!-- OVERLAY ========================= --> */}
-                    <div className="overlay first"></div>
+                    {/* <div className="overlay first"></div>
                     <div className="overlay second"></div>
-                    <div className="overlay third"></div>
+                    <div className="overlay third"></div> */}
                     
                     {/* !-- NAVBAR -- */}
                     <nav className="navbar">
@@ -81,11 +109,9 @@ export default class AuthPage extends Component {
                         {/* <img> ---- IMAGE placement here ---- </img> */}
                         <p>Welcome</p>
                     </div>
-
                     
                 </div>
                 
-
                 {/* SignUp form with user email and pw inputs & submit button */}
                 <form onSubmit={this.handleSignUp}>
                     <p>Sign up:</p>
@@ -103,9 +129,10 @@ export default class AuthPage extends Component {
                             <button>Submit</button>
                         </p>
                     </form>
+
                     
                 {/* SignIn form with user email and pw inputs & submit button */}
-                    <form onSubmit={this.handleSignUp}>
+                    <form onSubmit={this.handleSignIn}>
                         <p>Sign in:</p>
                         <label>
                             Email

@@ -23,7 +23,7 @@ export function signIn(userData) {
 
 
 export function fetchTodos() {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('TOKEN');
 
     try{
         return request

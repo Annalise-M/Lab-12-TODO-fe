@@ -99,6 +99,9 @@ form {
   background-color: #f2f2f243;
   padding: 20px;
   margin: 10px 0;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 
