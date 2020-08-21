@@ -60,7 +60,8 @@ export function updateTodo(id, updatedTodo) {
 
 
 export function createTodo(todoData) {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('TOKEN');
+    console.log(token, 'hellloooooooo');
 
     return request.post(`${URL}/api/todos`, todoData)
         .set('Authorization', token);

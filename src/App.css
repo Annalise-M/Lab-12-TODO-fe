@@ -47,6 +47,7 @@ body {
   background: rgb(177, 170, 170);
   cursor: url('https://bricampgomez.com/assets/img/batboy-50.png') 25 25,auto;
 }
+
 ul {
   list-style: none;
 }
@@ -94,6 +95,9 @@ ul {
 /* loading feature when hovering over submit buttons */
 .wait {cursor: wait;}
 
+a {
+  text-decoration: none;
+}
 form {
   border-radius: 5px;
   background-color: #f2f2f243;
